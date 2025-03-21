@@ -1,0 +1,5 @@
+.env
+.direnv/
+__pycache__/
+nixos-efi-vars.fd
+nixos.qcow2
