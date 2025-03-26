@@ -1,7 +1,7 @@
 {
   nixConfig.flake-registry = "https://raw.githubusercontent.com/fornybar/registry/main/registry.json";
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, nixosVm }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -12,8 +12,12 @@
           })
         ];
       };
+      devServer = import ./devserver.nix {
+        inherit self pkgs system nixpkgs nixosVm;
+      };
     in
     {
+      apps.${system} = devServer.apps;
       packages.${system}.default = pkgs.nats-demo;
       devShells.${system}.default = pkgs.mkShell {
         inputsFrom = [ self.packages.${system}.default ];
@@ -29,5 +33,6 @@
           fi
         '';
       };
+      nixosConfigurations.devserver = devServer.config;
     };
 }

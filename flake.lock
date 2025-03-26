@@ -1,6 +1,37 @@
 {
   "nodes": {
+    "nixosVm": {
+      "inputs": {
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1694524136,
+        "narHash": "sha256-bGytl6m+IL1fo2D7KYzwUh1y3XGcFn9z8H1SwRPC1lc=",
+        "owner": "fornybar",
+        "repo": "nixos.vm",
+        "rev": "87c6b1f0eda9a7e1391e6ef0048f62f7db3233da",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixosVm",
+        "type": "indirect"
+      }
+    },
     "nixpkgs": {
+      "locked": {
+        "lastModified": 1689605451,
+        "narHash": "sha256-u2qp2k9V1smCfk6rdUcgMKvBj3G9jVvaPHyeXinjN9E=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "53657afe29748b3e462f1f892287b7e254c26d77",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
       "locked": {
         "lastModified": 1742268799,
         "narHash": "sha256-IhnK4LhkBlf14/F8THvUy3xi/TxSQkp9hikfDZRD4Ic=",
@@ -16,7 +47,8 @@
     },
     "root": {
       "inputs": {
-        "nixpkgs": "nixpkgs"
+        "nixosVm": "nixosVm",
+        "nixpkgs": "nixpkgs_2"
       }
     }
   },
