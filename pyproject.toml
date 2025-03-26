@@ -10,7 +10,10 @@ dependencies = [
 ]
 
 [project.scripts]
-parse = "nats_demo.parse:main"
+pr-ingest = "nats_demo.primary_reserves.ingest:main"
+pr-parse = "nats_demo.primary_reserves.parse:main"
+pr-reply = "nats_demo.primary_reserves.reply:main"
+pr-api = "nats_demo.primary_reserves.api:main"
 
 
 [tool.pytest.ini_options]
